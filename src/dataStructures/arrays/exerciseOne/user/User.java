@@ -1,4 +1,4 @@
-package dataStructures.arrays.example1;
+package dataStructures.arrays.exerciseOne.user;
 
 /**
  *      Domain class for User Object
