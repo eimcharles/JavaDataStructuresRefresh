@@ -11,18 +11,20 @@ import java.util.UUID;
 
 public interface UserDAO {
 
+    boolean addUser(User user);
+
+    boolean updateUser(User user);
+
+    boolean removeUser(User user);
+
     User[] getUsers();
 
     User getUserById(UUID id);
 
-    boolean addUserById(UUID id);
-
-    boolean updateUserById(UUID id);
-
-    boolean removeUserById(UUID id);
-
     int getNumberOfUsers();
 
     void clearArrayUserDAO();
+
+    void displayAllUsers();
 
 }
