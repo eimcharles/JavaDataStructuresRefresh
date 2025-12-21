@@ -65,7 +65,7 @@ public class UserExample {
         jerryToUpdateByID.setLastName("Doodle");
         arrayUserDAO.updateUser(jerryToUpdateByID);
 
-        System.out.println("After id updated: "  + Jerry.getName()  + " "  + jerryToUpdateByID.getLastName());
+        System.out.println("After id updated: "  + jerryToUpdateByID.getName()  + " "  + jerryToUpdateByID.getLastName());
         arrayUserDAO.displayAllUsers();
         System.out.println();
 
