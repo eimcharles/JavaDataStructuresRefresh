@@ -11,11 +11,11 @@ import java.util.UUID;
 
 public interface UserDAO {
 
-    boolean addUser(User user);
+    void addUser(User user);
 
-    boolean updateUser(User user);
+    void updateUser(User user);
 
-    boolean removeUser(User user);
+    void removeUser(User user);
 
     User[] getUsers();
 
