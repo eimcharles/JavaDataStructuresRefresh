@@ -2,6 +2,7 @@ package dataStructures.arrayList.exerciseOne.user.dao;
 
 import dataStructures.arrayList.exerciseOne.user.User;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -11,21 +12,19 @@ import java.util.UUID;
 
 public interface UserDAO {
 
-    ///  TODO: CONVERT CLASS TO USE ARRAY LISTS
-
     void addUser(User user);
 
     void updateUser(User user);
 
     void removeUser(User user);
 
-    User[] getUsers();
+    List<User> getUsers();
 
-    User getUserById(UUID id);
+    User getUserById(UUID userId);
 
     int getNumberOfUsers();
 
-    void clearArrayUserDAO();
+    void clearListUserDAO();
 
     void displayAllUsers();
 
