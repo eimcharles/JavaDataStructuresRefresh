@@ -36,18 +36,6 @@ public class ListCarDAO implements CarDAO {
     }
 
     @Override
-    public List<Car> getCars() {
-
-        // Return an empty arrayList
-        if (this.carDAO == null || this.carDAO.isEmpty()){
-            return new ArrayList<>();
-        }
-
-        // Returns a new list containing the same cars.
-        return new ArrayList<>(this.carDAO);
-    }
-
-    @Override
     public void addCar(Car car) {
 
         // if not null, add
@@ -80,6 +68,18 @@ public class ListCarDAO implements CarDAO {
 
         // Car not found
         throw new CarNotFoundException(registrationNumber);
+    }
+
+    @Override
+    public List<Car> getCars() {
+
+        // Return an empty arrayList
+        if (this.carDAO == null || this.carDAO.isEmpty()){
+            return new ArrayList<>();
+        }
+
+        // Returns a new list containing the same cars.
+        return new ArrayList<>(this.carDAO);
     }
 
     @Override

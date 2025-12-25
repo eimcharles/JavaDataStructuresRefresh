@@ -12,11 +12,12 @@ import java.util.List;
 
 public interface CarDAO {
 
-    List<Car> getCars();
-
     void addCar(Car car);
 
     void updateCar(Car car);
 
+    List<Car> getCars();
+
     void displayAllCars();
+
 }
