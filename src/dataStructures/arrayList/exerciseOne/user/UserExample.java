@@ -2,6 +2,7 @@ package dataStructures.arrayList.exerciseOne.user;
 
 import dataStructures.arrayList.exerciseOne.user.dao.ListUserDAO;
 
+import java.util.List;
 import java.util.UUID;
 
 public class UserExample {
@@ -12,7 +13,8 @@ public class UserExample {
 
         ///  Question 1
         System.out.println("Question 1: get all users");
-        System.out.println(listUserDAO.getUsers());
+        List<User> allUser = listUserDAO.getUsers();
+        allUser.forEach(System.out::println);
         System.out.println();
 
         ///  Question 2
