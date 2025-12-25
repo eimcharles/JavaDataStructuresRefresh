@@ -1,8 +1,8 @@
 package dataStructures.arrayList.exerciseThree.booking.dao;
 
-
 import dataStructures.arrayList.exerciseThree.booking.Booking;
 
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -12,14 +12,16 @@ import java.util.UUID;
 
 public interface BookingDAO {
 
-    ///  TODO: CONVERT CLASS TO USE ARRAY LISTS
+    void addBooking(Booking booking);
 
-    Booking[] getBookings();
+    void removeBooking(Booking booking);
 
-    void addBooking(Booking carBooking);
-
-    void removeBooking(Booking carBookingToUpdate);
+    List<Booking> getBookings();
 
     Booking getBookingById(UUID bookingId);
+
+    int getNumberOfBookings();
+
+    void displayAllBookings();
 
 }
