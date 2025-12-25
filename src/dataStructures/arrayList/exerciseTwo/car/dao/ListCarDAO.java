@@ -6,27 +6,24 @@ import dataStructures.arrayList.exerciseTwo.car.FuelType;
 import dataStructures.arrayList.exerciseTwo.exception.CarNotFoundException;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- *      ArrayCarDAO is a Data Access Object (DAO)
+ *      ListCarDAO is a Data Access Object (DAO)
  *      class for managing Car objects,
  *      it implements the CarDAO contract.
  *
  *      This implementation stores and manages cars using ArrayLists.
  */
 
-public class ArrayCarDAO implements CarDAO {
+public class ListCarDAO implements CarDAO {
 
-    ///  TODO: CONVERT CLASS TO USE ARRAY LISTS
+    private final List<Car> carDAO;
 
-    private final Car[] carDAO;
-    private int numberOfCars = 0;
-    private static final int MAX_CAPACITY_OF_CARS = 4;
+    public ListCarDAO() {
 
-    public ArrayCarDAO() {
-
-        this.carDAO = new Car[MAX_CAPACITY_OF_CARS];
+        this.carDAO = new ArrayList<>();
 
         // Available for booking
         addCar(new Car("123_1", new BigDecimal("89.00"), Brand.BMW, FuelType.ELECTRIC));
@@ -39,45 +36,62 @@ public class ArrayCarDAO implements CarDAO {
     }
 
     @Override
-    public Car[] getCars() {
-        // Copy of Car objects returned from carDAO
-        return Arrays.copyOf(this.carDAO, this.carDAO.length);
+    public List<Car> getCars() {
+
+        // Return an empty arrayList
+        if (this.carDAO == null || this.carDAO.isEmpty()){
+            return new ArrayList<>();
+        }
+
+        // Returns a new list containing the same cars.
+        return new ArrayList<>(this.carDAO);
     }
 
     @Override
     public void addCar(Car car) {
 
-        if (this.numberOfCars >= this.carDAO.length) {
-            throw new IllegalStateException(String.format("No more available space to add cars"));
+        // if not null, add
+        if (car != null){
+            carDAO.add(car);
         }
-
-        this.carDAO[this.numberOfCars] = car;
-        this.numberOfCars++;
     }
 
     @Override
-    public void updateCar(Car carToUpdate) {
+    public void updateCar(Car car) {
 
         // Car to be cancelled registration number
-        String registrationNumber = carToUpdate.getRegistrationNumber();
+        String registrationNumber = car.getRegistrationNumber();
 
-        for (int i = 0; i < this.numberOfCars; i++) {
+        for (int i = 0; i < this.carDAO.size(); i++) {
 
-            Car currentCar = this.carDAO[i];
+            // Placeholder for the updated object
+            Car currentCar = this.carDAO.get(i);
 
-            // Match the current car with the registration number
+            // Match the currentCar car with the registration number
             if (currentCar != null && currentCar.getRegistrationNumber().equals(registrationNumber)) {
 
                 // Replace the old object reference with the new
-                this.carDAO[i] = carToUpdate;
+                this.carDAO.set(i, car);
 
-                // Car found and updated
+                // Stop searching once update is complete
                 return;
             }
         }
 
         // Car not found
         throw new CarNotFoundException(registrationNumber);
+    }
+
+    @Override
+    public void displayAllCars() {
+
+        // No cars to display
+        if (carDAO.isEmpty()) {
+            return;
+        }
+
+        // Java Streams
+        carDAO.forEach(System.out::println);
     }
 
 }

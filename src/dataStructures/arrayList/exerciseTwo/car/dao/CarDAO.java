@@ -3,6 +3,8 @@ package dataStructures.arrayList.exerciseTwo.car.dao;
 
 import dataStructures.arrayList.exerciseTwo.car.Car;
 
+import java.util.List;
+
 /**
  *      CarDAO defines the contract for all data
  *      access operations related to Car entities
@@ -10,12 +12,11 @@ import dataStructures.arrayList.exerciseTwo.car.Car;
 
 public interface CarDAO {
 
-    ///  TODO: CONVERT CLASS TO USE ARRAY LISTS
-
-    Car[] getCars();
+    List<Car> getCars();
 
     void addCar(Car car);
 
-    void updateCar(Car carToUpdate);
+    void updateCar(Car car);
 
+    void displayAllCars();
 }
