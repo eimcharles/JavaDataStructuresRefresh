@@ -71,7 +71,7 @@ public class UserExample {
         System.out.println();
 
         ///  Question 7
-        System.out.println("Question 6: get user by id");
+        System.out.println("Question 7: get user by id");
         User jerryByID = listUserDAO.getUserById(jerryToUpdateByID.getUserId());
         System.out.println(jerryByID);
         System.out.println();
