@@ -67,6 +67,9 @@ public class MultiParameterGenericClass <keyOneElementType, valueTwoElementType>
     @Override
     public boolean equals(Object obj){
 
+        // 0. Same memory address, equal
+        if (this == obj) return true;
+
         // 1. If the other object is null or a different class, not equal.
         if(obj == null || this.getClass() != obj.getClass())
             return false;
