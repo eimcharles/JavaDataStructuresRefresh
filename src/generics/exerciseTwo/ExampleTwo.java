@@ -53,16 +53,8 @@ public class ExampleTwo {
      *
      *      PECS: Producer Extends | Consumer Super
      *
-     *      The passed List<? extends Number> list is a Producer:
-     *
-     *      - Data Flow: The data is moving OUT of the list and INTO the method.
-     *
-     *      - Supply: The list "supplies" (produces) the Numbers required for
-     *      the sum or the print operation.
-     *
-     *      - Read-Only: Because the list is a Producer, the method acts as the
-     *      receiver.
-     *
+     *      The passed List<? extends Number> list
+     *      is a Producer: reads data from a collection.
      * */
 
     static void printNumbers(List<? extends Number> list) {
