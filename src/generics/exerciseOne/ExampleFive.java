@@ -55,6 +55,9 @@ public class ExampleFive {
      *
      *      Intersection (&): The type 'T' must satisfy ALL bounds
      *
+     *      Type passed must implement the Comparable interface.
+     *      Type passed must implement the Serializable interface.
+     *
      *      Type Erasure: At runtime, the compiler replaces 'T' with the leftmost bound.
      * */
 
