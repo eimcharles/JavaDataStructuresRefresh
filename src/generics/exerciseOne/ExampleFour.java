@@ -61,6 +61,10 @@ public class ExampleFour {
      *      The upper bound restricts the "unlimited" nature of generics
      *      to a specific family of classes that know how to compare themselves.
      *
+     *      Bounded Type Parameters (<T extends Comparable <T> >) are used when
+     *      you need to refer to the exact same type multiple times in
+     *      a method.
+     *
      *      <T> : The Type Parameter -  method uses a placeholder 'T'.
      *      T[] : The input parameter - array containing elements of type 'T'.
      *      n.compareTo(number) - returns an integer
@@ -70,6 +74,8 @@ public class ExampleFour {
 
         int count = 0;
         for (T n : elementTypeArray) {
+
+            ///  n.compareTo() references Comparable <T> in the method
             if (n.compareTo(number) > 0){
                 count++;
             }
@@ -81,6 +87,8 @@ public class ExampleFour {
 
         int count = 0;
         for (T n : elementTypeList) {
+
+            ///  n.compareTo() references Comparable <T> in the method
             if (n.compareTo(number) > 0){
                 count++;
             }
