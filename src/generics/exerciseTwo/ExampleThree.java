@@ -55,6 +55,14 @@ public class ExampleThree {
      *
      *      List<? super Number> list is a
      *      Consumer: writes (add) data into a collection.
+     *
+     *      Consumer methods are impure functions and
+     *      operate via side effects:
+     *
+     *              State Mutation
+     *              Collection modification
+     *              Broadcasting (e.g. Logging)
+     *
      */
 
     static void addNumberToList(List<? super Number> list) {
