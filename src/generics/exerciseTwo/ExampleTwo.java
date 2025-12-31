@@ -54,7 +54,11 @@ public class ExampleTwo {
      *      PECS: Producer Extends | Consumer Super
      *
      *      The passed List<? extends Number> list
-     *      is a Producer: reads data from a collection.
+     *      is a Producer, can be pure, almost always impure:
+     *
+     *              Instantiate Objects
+     *              Data retrieval
+     *              Deferred execution
      * */
 
     static void printNumbers(List<? extends Number> list) {
